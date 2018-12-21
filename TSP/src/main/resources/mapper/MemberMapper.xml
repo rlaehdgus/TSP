@@ -11,5 +11,19 @@
 		VALUES
 			(#{uId}, #{uPw}, #{uName}, #{uPhone})
 	</insert>
+	
+	<select id="login_check" resultType="memberVo">
+		SELECT
+			UID,
+			UPW,
+			UNAME,
+			UPHONE
+		FROM
+			MEMBER_INFO
+		WHERE
+			UID = #{uId}
+			AND
+			UPW = #{uPw}
+	</select>
 
 </mapper>

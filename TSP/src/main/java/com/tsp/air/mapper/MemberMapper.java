@@ -20,4 +20,8 @@ public class MemberMapper {
 	public void join_check(MemberVO memberVo) throws SQLException {
 		sqlSession.insert(Namespace+".join_check", memberVo);
 	}
+	
+	public MemberVO login_check(MemberVO memberVo) throws SQLException {
+		return sqlSession.selectOne(Namespace+".login_check", memberVo);
+	}
 }

@@ -8,4 +8,5 @@ public interface MemberService {
 	
 	public void join_check(MemberVO memberVo) throws SQLException;
 
+	public MemberVO login_check(MemberVO memberVo) throws SQLException;
 }

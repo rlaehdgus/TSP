@@ -20,5 +20,9 @@ public class MemberServiceImpl implements MemberService {
 	public void join_check(MemberVO memberVo) throws SQLException {
 		m_mapper.join_check(memberVo);
 	}
+	
+	public MemberVO login_check(MemberVO memberVo) throws SQLException {
+		return m_mapper.login_check(memberVo);
+	}
 
 }
