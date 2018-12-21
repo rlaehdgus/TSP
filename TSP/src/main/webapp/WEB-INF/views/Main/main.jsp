@@ -8,11 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TSP - 항공의 시작</title>
+    <title>TSP - 여행의 시작</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/half-slider.css">
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css"> --%>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/3-col-portfolio.css">
   </head>
   <body>
@@ -86,72 +87,64 @@
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-        <h1>Half Slider by Start Bootstrap</h1>
-        <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
-          <code>half-slider.css</code>
-          file.</p>
+        <h1>TSP 항공 소개</h1>
+        <p>안녕하세요 여러분의 여행을 책임질 <code>TSP</code> 항공입니다. <br>저희 <code>TSP</code> 항공은 고객님이 행복하고 편안한 여행을 다녀오실 수 있도록 많은 도움을 드리는 항공입니다.</p>
       </div>
       
       <!-- Page Content -->
 	    <div class="container">
 	
 	      <!-- Page Heading -->
-	      <h1 class="my-4">여행가기 좋은 나라
+	      <h1 class="my-4">추천 여행지
 	        <small>(Top 6)</small>
 	      </h1>
 	
 	      <div class="row">
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/England.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+	              <h4 class="card-title">영국</h4>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/GoldCoast.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+	              <h4 class="card-title">골든코스트</h4>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/crete.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+	              <h4 class="card-title">크리테</h4>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/paris.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+	              <h4 class="card-title">파리</h4>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/france.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+	              <h4 class="card-title">발리</h4>
 	            </div>
 	          </div>
 	        </div>
 	        <div class="col-lg-4 col-sm-6 portfolio-item">
 	          <div class="card h-100">
-	            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+	            <img class="card-img-top" src="/resources/img/boracay.jpg" alt="">
 	            <div class="card-body">
-	              <h4 class="card-title"></h4>
-	              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
+	              <h4 class="card-title">보라카이</h4>
 	            </div>
 	          </div>
 	        </div>

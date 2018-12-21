@@ -73,7 +73,7 @@ html, body {
 </head>
 <body>
 	<div id="login-page" class="row">
-		<h5><a href="/main.do" class="main_move"><span>TSP</span></a></h5>
+		<h3 align="center"><a href="/main.do" class="main_move"><b>TSP</b></a></h3>
 	  <div class="col s12 z-depth-4 card-panel" style="width: 530px">
 	    <f:form modelAttribute="memberVo" action="join_check.do" method="post" class="login-form">
 	      <div class="row">
@@ -87,7 +87,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-action-lock-outline prefix"></i> -->
 	          <i class="material-icons prefix">person_outline</i>
-	          <input id="name" name="u_name" type="text" />
+	          <input id="name" name="uName" type="text" />
 	          <label for="name">Username</label>
 	        </div>
 	      </div>
@@ -96,7 +96,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-social-person-outline prefix"></i> -->
 	          <i class="material-icons prefix">account_circle</i>
-	          <input id="id" name="u_id" type="text"/>
+	          <input id="id" name="uId" type="text"/>
 	          <label for="id">Id</label>
 	        </div>
 	      </div>
@@ -105,7 +105,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-action-lock-outline prefix"></i> -->
 	          <i class="material-icons prefix">vpn_key</i>
-	          <input id="password" name="u_pw" type="password" />
+	          <input id="password" name="uPw" type="password" />
 	          <label for="password">Password</label>
 	        </div>
 	      </div>
@@ -114,7 +114,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-action-lock-outline prefix"></i> -->
 	          <i class="material-icons prefix">vpn_key</i>
-	          <input id="password_a" name="u_cpw" type="password" />
+	          <input id="password_a" name="uCpw" type="password" />
 	          <label for="password_a">Password again</label>
 	        </div>
 	      </div>
@@ -123,7 +123,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-social-person-outline prefix"></i> -->
 	          <i class="material-icons prefix">account_box</i>
-	          <input id="phone" name="u_phone" type="text" style="cursor: auto;" />
+	          <input id="phone" name="uPhone" type="text" style="cursor: auto;" />
 	          <label for="phone">Phone</label>
 	        </div>
 	      </div>
@@ -144,24 +144,24 @@ html, body {
 <script>
 $(".login-form").validate({
 	  rules: {
-	    u_name: {
+	    uName: {
 	      required: true,
 	      minlength: 2
 	    },     
-	    u_id: {
+	    uId: {
 	      required: true,
 	      minlength: 4
 	    },
-	    u_pw: {
+	    uPw: {
 	      required: true,
 	      minlength: 5
 	    },
-	    u_cpw: {
+	    uCpw: {
 	      required: true,
 	      minlength: 5,
 	      equalTo: "#password"
 	    },
-	    u_phone: {
+	    uPhone: {
 	    	required: true,
 	    	minlength: 8
 	    }

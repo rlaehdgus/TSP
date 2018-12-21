@@ -1,5 +1,24 @@
 package com.tsp.air.service.impl;
 
-public class MemberServiceImpl {
+import java.sql.SQLException;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.tsp.air.dto.MemberVO;
+import com.tsp.air.mapper.MemberMapper;
+import com.tsp.air.service.MemberService;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	@Inject
+	private MemberMapper m_mapper;
+	
+	@Override
+	public void join_check(MemberVO memberVo) throws SQLException {
+		m_mapper.join_check(memberVo);
+	}
 
 }

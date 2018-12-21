@@ -70,7 +70,7 @@ html, body {
 </head>
 <body>
 	<div id="login-page" class="row">
-	<h5><a href="/main.do" class="main_move"><span>TSP</span></a></h5>
+	<h3 align="center"><a href="/main.do" class="main_move"><b>TSP</b></a></h3>
     <div class="col s12 z-depth-4 card-panel" style="width: 530px">
       <f:form modelAttribute="memberVo" action="login_check.do" method="post" class="login-form">
         <div class="row">
