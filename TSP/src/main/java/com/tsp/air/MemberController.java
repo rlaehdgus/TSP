@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tsp.air.dto.MemberVO;
@@ -39,7 +40,7 @@ public class MemberController {
 	public String join_check(@ModelAttribute("memberVo") MemberVO memberVo, Model model) throws SQLException {
 		logger.info("join_check.do");
 		
-		m_service.join_check(memberVo);
+		m_service.addMember(memberVo);
 		
 		return "redirect: /login.do";
 	}
@@ -52,32 +53,71 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/login_check.do", method = RequestMethod.POST)
-	public ModelAndView login_check(@ModelAttribute("memberVo") MemberVO memberVo, ModelAndView mav, HttpSession session, HttpServletResponse response) throws SQLException, IOException {
+	public String login_check(@ModelAttribute("memberVo") MemberVO memberVo, HttpSession session, HttpServletResponse response) throws SQLException, IOException {
 		logger.info("login_check.do");
-		
-		response.setContentType("text/html; charset=UTF-8");
-        PrintWriter out = response.getWriter();
+		String returnUrl = "";
 		
 		/* 만약 세션 값이 있다면 초기화 */
 		if(session.getAttribute("member") != null) {
 			session.invalidate();
 		}
 		
-		memberVo = m_service.login_check(memberVo);
+		memberVo = m_service.member_info(memberVo);
 		
 		/* 만약 로그인 값이 있다면 로그인 성공 */
 		if(memberVo != null) {
 			session.setAttribute("member", memberVo);
-			mav.setViewName("redirect: /main.do");
-
+			
+			/*response.setContentType("text/html; charset=UTF-8");
+	        PrintWriter out = response.getWriter();
+			
             out.println("<script>alert('신규 가입을 축하드립니다!');</script>");
-            out.flush();
+            out.flush();*/
+            
+            returnUrl = "redirect:/main.do";
 		}else {
-			mav.setViewName("redirect: /login.do");
-			out.println("<script>alert('아이디 또는 패스워드가 맞지 않습니다. 다시 입력해주세요.'); history.back(-1);</script>");
-            out.flush();
+			/*response.setContentType("text/html; charset=UTF-8");
+	        PrintWriter out = response.getWriter();
+			
+			out.println("<script>alert('아이디 또는 패스워드가 맞지 않습니다.\n 다시 입력해주세요.');</script>");
+            out.flush();*/
+            
+            returnUrl = "redirect:/login.do";
 		}
 		
-		return mav;
+		return returnUrl;
+	}
+	
+	@RequestMapping(value = "/logout.do", method = RequestMethod.GET) 
+	public String logout(HttpSession session) throws SQLException {
+		
+		session.invalidate();
+		
+		return "redirect:/main.do";
+	}
+	
+	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
+	public String mypage(@ModelAttribute("memberVo") MemberVO memberVo) {
+		
+		return "Member/mypage";
+	}
+	
+	@RequestMapping(value = "/mypage_update.do", method = RequestMethod.POST)
+	public String mypage_update(@ModelAttribute("memberVo") MemberVO memberVo, HttpServletResponse response, HttpSession session) throws SQLException, IOException {
+		String returnUrl = "";
+		
+		if(memberVo == null) {
+			returnUrl = "redirect:/main.do";
+		} else {
+			m_service.member_update(memberVo);
+			
+			memberVo = m_service.member_info(memberVo);
+			
+			session.setAttribute("member", memberVo);
+			
+			returnUrl = "redirect:/mypage.do";
+		}
+		
+		return returnUrl;
 	}
 }

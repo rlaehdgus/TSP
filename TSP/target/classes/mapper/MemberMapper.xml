@@ -5,19 +5,20 @@
 	
 <mapper namespace="com.tsp.air.mapper.MemberMapper">
 
-	<insert id="join_check" parameterType="memberVo">
+	<insert id="addMember" parameterType="memberVo">
 		INSERT INTO MEMBER_INFO
-			(UID, UPW, UNAME, UPHONE)
+			(UID, UPW, UNAME, UPHONE, UADDR)
 		VALUES
-			(#{uId}, #{uPw}, #{uName}, #{uPhone})
+			(#{uId}, #{uPw}, #{uName}, #{uPhone}, #{uAddr})
 	</insert>
 	
-	<select id="login_check" resultType="memberVo">
+	<select id="login_check" parameterType="memberVo" resultType="memberVo">
 		SELECT
 			UID,
 			UPW,
 			UNAME,
-			UPHONE
+			UPHONE,
+			UADDR
 		FROM
 			MEMBER_INFO
 		WHERE
@@ -25,5 +26,17 @@
 			AND
 			UPW = #{uPw}
 	</select>
+	
+	<update id="member_update" parameterType="memberVo">
+		UPDATE
+			MEMBER_INFO
+		SET
+			UPW = #{uPw},
+			UNAME = #{uName},
+			UPHONE = #{uPhone},
+			UADDR = #{uAddr}
+		WHERE
+			UID = #{uId}
+	</update>
 
 </mapper>

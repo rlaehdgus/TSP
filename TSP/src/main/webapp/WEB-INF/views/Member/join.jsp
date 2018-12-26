@@ -127,10 +127,19 @@ html, body {
 	          <label for="phone">Phone</label>
 	        </div>
 	      </div>
+	      
+	      <div class="row margin">
+	        <div class="input-field col s12">
+	          <!-- <i class="mdi-social-person-outline prefix"></i> -->
+	          <i class="material-icons prefix">store_mall_directory</i>
+	          <input id="addr" name="uAddr" type="text" style="cursor: auto;" />
+	          <label for="addr">Address</label>
+	        </div>
+	      </div>
 	
 	      <div class="row">
 	        <div class="input-field col s12">
-	          <button type="submit" class="btn waves-effect waves-light col s12">로그인</button>
+	          <button type="submit" class="btn waves-effect waves-light col s12">회원가입</button>
 	        </div>
 	        <div class="input-field col s12">
 	          <p class="margin center medium-small sign-up">이미 로그인이 되어있으신가요? <a href="/login.do">로그인</a></p>

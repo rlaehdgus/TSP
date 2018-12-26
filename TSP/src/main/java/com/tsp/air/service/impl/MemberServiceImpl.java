@@ -17,12 +17,15 @@ public class MemberServiceImpl implements MemberService {
 	private MemberMapper m_mapper;
 	
 	@Override
-	public void join_check(MemberVO memberVo) throws SQLException {
-		m_mapper.join_check(memberVo);
+	public void addMember(MemberVO memberVo) throws SQLException {
+		m_mapper.addMember(memberVo);
 	}
 	
-	public MemberVO login_check(MemberVO memberVo) throws SQLException {
+	public MemberVO member_info(MemberVO memberVo) throws SQLException {
 		return m_mapper.login_check(memberVo);
 	}
-
+	
+	public void member_update(MemberVO memberVo) throws SQLException {
+		m_mapper.member_update(memberVo);
+	}
 }

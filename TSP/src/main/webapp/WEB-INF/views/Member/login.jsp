@@ -83,7 +83,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-social-person-outline prefix"></i> -->
 	          <i class="material-icons prefix">account_circle</i>
-	          <input id="username" name="username" type="text"/>
+	          <input id="username" name="uId" type="text"/>
 	          <label for="username">Id</label>
 	        </div>
 	      </div>
@@ -92,7 +92,7 @@ html, body {
 	        <div class="input-field col s12">
 	          <!-- <i class="mdi-action-lock-outline prefix"></i> -->
 	          <i class="material-icons prefix">vpn_key</i>
-	          <input id="password" name="password" type="password" />
+	          <input id="password" name="uPw" type="password" />
 	          <label for="password">Password</label>
 	        </div>
 	      </div>

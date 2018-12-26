@@ -17,11 +17,15 @@ public class MemberMapper {
 	@Inject
 	private SqlSession sqlSession;
 	
-	public void join_check(MemberVO memberVo) throws SQLException {
-		sqlSession.insert(Namespace+".join_check", memberVo);
+	public void addMember(MemberVO memberVo) throws SQLException {
+		sqlSession.insert(Namespace+".addMember", memberVo);
 	}
 	
 	public MemberVO login_check(MemberVO memberVo) throws SQLException {
 		return sqlSession.selectOne(Namespace+".login_check", memberVo);
+	}
+	
+	public void member_update(MemberVO memberVo) throws SQLException {
+		sqlSession.update(Namespace+".member_update", memberVo);
 	}
 }
