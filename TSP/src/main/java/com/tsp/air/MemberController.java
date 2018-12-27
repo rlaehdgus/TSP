@@ -68,21 +68,21 @@ public class MemberController {
 		if(memberVo != null) {
 			session.setAttribute("member", memberVo);
 			
+			returnUrl = "redirect:/main.do";
+			
 			/*response.setContentType("text/html; charset=UTF-8");
 	        PrintWriter out = response.getWriter();
 			
-            out.println("<script>alert('신규 가입을 축하드립니다!');</script>");
+            out.println("<script>alert('정보 확인이 되었습니다. \n즐거운 여행 하세요.');</script>");
             out.flush();*/
-            
-            returnUrl = "redirect:/main.do";
 		}else {
+			returnUrl = "redirect:/login.do";
+
 			/*response.setContentType("text/html; charset=UTF-8");
 	        PrintWriter out = response.getWriter();
 			
 			out.println("<script>alert('아이디 또는 패스워드가 맞지 않습니다.\n 다시 입력해주세요.');</script>");
-            out.flush();*/
-            
-            returnUrl = "redirect:/login.do";
+            out.flush();*/            
 		}
 		
 		return returnUrl;
@@ -102,12 +102,18 @@ public class MemberController {
 		return "Member/mypage";
 	}
 	
-	@RequestMapping(value = "/mypage_update.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/member_update.do", method = RequestMethod.POST)
 	public String mypage_update(@ModelAttribute("memberVo") MemberVO memberVo, HttpServletResponse response, HttpSession session) throws SQLException, IOException {
 		String returnUrl = "";
 		
 		if(memberVo == null) {
-			returnUrl = "redirect:/main.do";
+			returnUrl = "redirect:/login.do";
+			
+			/*response.setContentType("text/html; charset=UTF-8");
+	        PrintWriter out = response.getWriter();
+			
+			out.println("<script>alert('로그인 후 이용 가능합니다.');</script>");
+            out.flush(); */
 		} else {
 			m_service.member_update(memberVo);
 			
@@ -116,6 +122,12 @@ public class MemberController {
 			session.setAttribute("member", memberVo);
 			
 			returnUrl = "redirect:/mypage.do";
+			
+			/*response.setContentType("text/html; charset=UTF-8");
+	        PrintWriter out = response.getWriter();
+			
+			out.println("<script>alert('회원 정보를 변경하였습니다.');</script>");
+            out.flush();*/ 
 		}
 		
 		return returnUrl;

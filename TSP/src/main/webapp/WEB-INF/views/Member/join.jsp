@@ -78,7 +78,6 @@ html, body {
 	    <f:form modelAttribute="memberVo" action="join_check.do" method="post" class="login-form">
 	      <div class="row">
 	        <div class="input-field col s12 center">
-	        	<!-- <span style="float: left;"><a href="/main.do">TSP 바로가기</a></span> -->
 	          <h4>회원가입</h4>
 	        </div>
 	      </div>
@@ -171,6 +170,10 @@ $(".login-form").validate({
 	      equalTo: "#password"
 	    },
 	    uPhone: {
+	    	required: true,
+	    	minlength: 8
+	    },
+	    uAddr: {
 	    	required: true,
 	    	minlength: 8
 	    }
