@@ -3043,6 +3043,7 @@ input[type="button"].btn-block {
   bottom: 100%;
   margin-top: 0;
   margin-bottom: 0.125rem;
+  background-color: #212529;
 }
 
 .dropup .dropdown-toggle::after {
@@ -3150,7 +3151,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #adbdcc;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
