@@ -10,7 +10,7 @@
 		<div class="side_menu" id="side_menu">
 	   	<ul class="menu_al">
 	    	<li class="menu_list">
-	    		<a href="tsp_board.do" class="menu_link">공지사항</a>
+	    		<a href="tsp_board_list.do" class="menu_link">공지사항</a>
 	    	</li>
 	    	<li class="menu_list">
 	    		<a href="#" class="menu_link">미정</a>

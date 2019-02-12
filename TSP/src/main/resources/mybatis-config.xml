@@ -5,5 +5,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.tsp.air.dto.MemberVO" alias="memberVo"/>
+		<typeAlias type="com.tsp.air.dto.BoardVO" alias="boardVo"/>
 	</typeAliases>
 </configuration>
